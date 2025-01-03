@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hermes Alert Settings</title>
+    <style>
+        body {
+            width: 350px;
+            padding: 15px;
+            font-family: Arial, sans-serif;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="color"] {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        button#stopButton {
+            background-color: #f44336;
+        }
+        button#stopButton:hover {
+            background-color: #da190b;
+        }
+        .status {
+            margin-top: 15px;
+            padding: 10px;
+            border-radius: 4px;
+            display: none;
+        }
+        .status.success {
+            background-color: #dff0d8;
+            color: #3c763d;
+            display: block;
+        }
+        .status.error {
+            background-color: #f2dede;
+            color: #a94442;
+            display: block;
+        }
+        .monitoring-status {
+            text-align: center;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+        .monitoring-active {
+            color: #4CAF50;
+        }
+        .monitoring-stopped {
+            color: #f44336;
+        }
+    </style>
+</head>
+<body>
+    <h2>Hermes Alert Settings</h2>
+    <div class="form-group">
+        <label for="selector">CSS Selector:</label>
+        <input type="text" id="selector" placeholder="e.g., DIV.calendar-display-block > DIV > MAT-CALENDAR" />
+    </div>
+    <div class="form-group">
+        <label for="targetColor">Target Color (HEX):</label>
+        <input type="color" id="targetColor" value="#14a38b" />
+    </div>
+    <div class="form-group">
+        <label for="targetText">Target Texts (comma-separated):</label>
+        <input type="text" id="targetText" placeholder="e.g., APR 2025, MAY 2025, JUN 2025" />
+    </div>
+    <button id="saveButton">Save Settings</button>
+    <button id="stopButton">Stop Monitoring</button>
+    <div id="status" class="status"></div>
+    <div id="monitoringStatus" class="monitoring-status"></div>
+    <script src="popup.js"></script>
+</body>
+</html>
